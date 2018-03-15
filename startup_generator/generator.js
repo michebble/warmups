@@ -23,7 +23,7 @@ var thatArray = ["Facebook Platform","Erlang Enthusiasts","Ex-Girlfriends",
 "Surgeons","Pounding Jagger Bombs","Textbooks","Coffee Shops","Baristas"];
 
 
-function indexGenerator(max) {
+function indexGenerator(max) {  //function to make random number
   return Math.floor(Math.random() * Math.max(max));
 }
 
@@ -32,7 +32,7 @@ function startupPitch() {
   console.log(`Hey, let me tell you about my new startup.\nIt's basically ${thisArray[indexGenerator(thisArray.length)]} for ${thatArray[indexGenerator(thatArray.length)]}.`);
 }
 
-function myNewStartUp() {
+function myNewStartUp() { //function to create startup string
   return `${thisArray[indexGenerator(thatArray.length)]} for ${thatArray[indexGenerator(thatArray.length)]}`;
 }
 
@@ -46,11 +46,11 @@ Extension
 Add each random combo that gets generated into an array. When the array contains 5 random combos, print them out in order with a number prefixing each one e.g.
 
 */
-var topFive =[];
+var topFive =[]; //init array to hold ideas
 
-for (i = 0; i < 5; i++) {
+for (i = 0; i < 5; i++) {  // loads idea into array
   topFive.push(`${i+1}. ${myNewStartUp()}`);
-  if (topFive.length === 5) {
+  if (topFive.length === 5) {  //if the array holds five ideas console log the ideas
     console.log("Hey let me tell you about my startup ideas.")
     for (j = 0; j < topFive.length; j++) {
       console.log(topFive[j]);

@@ -74,7 +74,6 @@ var mumFive = [];
 function yourMum () {
   for (x = 0; x < 5; x++) {
     mumFive.push(`${x+1}. ${mumStartUp()}`);
-    debugger
     if (mumFive.length === 5) {
       console.log("Hey let me tell you about my startup ideas.")
       for (var j = 0; j < mumFive.length; j++) {

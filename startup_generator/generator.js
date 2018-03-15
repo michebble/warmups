@@ -29,11 +29,11 @@ function indexGenerator(max) {
 
 
 function startupPitch() {
-  console.log(`Hey, let me tell you about my new startup.\nIt's basically ${thisArray[indexGenerator(89)]} for ${thatArray[indexGenerator(75)]}.`);
+  console.log(`Hey, let me tell you about my new startup.\nIt's basically ${thisArray[indexGenerator(thisArray.length)]} for ${thatArray[indexGenerator(thatArray.length)]}.`);
 }
 
 function myNewStartUp() {
-  return `${thisArray[indexGenerator(89)]} for ${thatArray[indexGenerator(75)]}`;
+  return `${thisArray[indexGenerator(thatArray.length)]} for ${thatArray[indexGenerator(thatArray.length)]}`;
 }
 
 

@@ -15,12 +15,12 @@ for (year = 1918; year <= 2018; year++) {
 
 
 
-/*
-For numbers between 1 and 200:
-a) print out multiples of 7.
-b) print out every second odd number.
+// /*
+// For numbers between 1 and 200:
+// a) print out multiples of 7.
+// b) print out every second odd number.
 
-*/
+// */
 
 var counter = 1; //counter to find every second odd
 
@@ -40,9 +40,15 @@ for (i = 1; i <=200; i++) {
   } 
 }
 
+for (i = 1; i <= 200; i++) {                    // Kasun's example
+  if (i % 7 === 0 || i % 4 === 3) {
+  	console.log(i);
+  }
+}
 
 
 
-// for (prime = 0; prime <= 200; prime++) {
-// 	if (prime )
-// }
+
+for (prime = 0; prime <= 200; prime++) {
+	for (j = 0;)
+}

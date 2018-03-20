@@ -28,3 +28,4 @@ if (firstHalf === lastHalf) {
 } else if (lastHalf!== firstHalf) {
   alert('Nope, not a palindrome.')
 }
+

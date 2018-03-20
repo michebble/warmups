@@ -22,6 +22,7 @@ var players = [
 
 var par = [3, 4, 5, 5, 3, 3, 4,3,5]
 var parGame = par.reduce(total)
+var overStokes = []
 
 console.log("Course par is " + parGame)
 
@@ -31,6 +32,7 @@ for (i = 0; i < players.length; i++) {
   var final = result - parGame
   if (result > parGame) {
     console.log(final + " over par") 
+    overStokes[i] = final
   } else if (result === parGame) {
     console.log("perfect game") 
   } else if (result < parGame) {
@@ -38,4 +40,8 @@ for (i = 0; i < players.length; i++) {
   }
 }
 
+var fishWinnings = overStokes.reduce(total)
+for (i = 0; i < overStokes.length; i++) {
+  console.log(players[i].name + " owes Fish \$" + overStokes[i])
+}
 

@@ -17,6 +17,12 @@ var players = [
   },
   { name: "Fish",
     card: [2, 2, 4, 5, 4, 3, 6, 4, 1]
+  },
+  {name: "Simon",
+   card: [35]
+  },
+  { name: "Spiffy",
+    card: [5]
   }
 ]
 
@@ -34,24 +40,36 @@ for (i = 0; i < players.length; i++) {
   if (result > parGame) {
     console.log(players[i].final + " over par") 
   } else if (result === parGame) {
-    console.log("perfect game") 
+    console.log("Par game") 
   } else if (result < parGame) {
     console.log(players[i].final * -1 + " under par")
   }
 }
 
-console.log("\nFish's winnings:")
+
+
+// each player should pay Fish a dollar for every stroke under.
+console.log("\nFish's bets:")
 for (i = 0; i < players.length; i++) {
   if (players[i].name !== "Fish" && players[i].final > 0) {
-    console.log(players[i].name + " owes Fish \$" + players[i].final)
+    console.log(players[i].name + " owes Fish \$" + players[i].final + ".")
     owings[i] = players[i].final
   } else if (players[i].name !== "Fish" && players[i].final < 0) {
-    console.log("Fish owes " + players[i].name + " \$" + players[i].final * -1)
+    console.log("Fish owes " + players[i].name + " \$" + players[i].final * -1 + ".")
+    owings[i] = players[i].final
   } else if (players[i].name !== "Fish" && players[i].final === 0) {
     console.log(players[i].name + " doesn't owes Fish this time...")
+    owings[i] = players[i].final
+  } else if (players[i].name === "Fish" && players[i].final > 0) {
+    console.log("Fish owes everyone \$" + players[i].final * + " each.")
+    owings[i] = (players[i].final * (players.length -1)) * -1
+  } else if (players[i].name === "Fish" && players[i].final < 0) {
+    console.log("Everyone owes Fish an extra \$" + players[i].final * -1 + " each.")
+    owings[i] = (players[i].final * (players.length -1)) * -1
   }
 }
-console.log("Together they owe Fish \$" + owings.reduce(total))
+
+console.log("Fish\'s total winnings: \$" + owings.reduce(total))
 
 
 // for (i = 0; i < players.length; i++) {

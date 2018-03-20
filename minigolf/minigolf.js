@@ -22,26 +22,50 @@ var players = [
 
 var par = [3, 4, 5, 5, 3, 3, 4,3,5]
 var parGame = par.reduce(total)
-var overStokes = []
+var owings = []
 
 console.log("Course par is " + parGame)
 
 for (i = 0; i < players.length; i++) {
   var result = players[i].card.reduce(total)
   console.log('Player: ' + players[i].name + ' \nScore is: ' + result)
-  var final = result - parGame
+  players[i].final = result - parGame
+
   if (result > parGame) {
-    console.log(final + " over par") 
-    overStokes[i] = final
+    console.log(players[i].final + " over par") 
   } else if (result === parGame) {
     console.log("perfect game") 
   } else if (result < parGame) {
-    console.log(final * -1 + " under par")
+    console.log(players[i].final * -1 + " under par")
   }
 }
 
-var fishWinnings = overStokes.reduce(total)
-for (i = 0; i < overStokes.length; i++) {
-  console.log(players[i].name + " owes Fish \$" + overStokes[i])
-}
+console.log("\nFish's winnings:")
+for (i = 0; i < players.length; i++) {
+  if (players[i].name !== "Fish")
+  console.log(players[i].name + " owes Fish \$" + players[i].final)
+  owings[i] = players[i].final
+} 
+console.log("Together they owe Fish \$" + owings.reduce(total))
+
+
+// for (i = 0; i < players.length; i++) {
+//   var result = players[i].card.reduce(total)
+//   console.log('Player: ' + players[i].name + ' \nScore is: ' + result)
+//   var final = result - parGame
+//   if (result > parGame) {
+//     console.log(final + " over par") 
+//     overStokes[i] = final
+//   } else if (result === parGame) {
+//     console.log("perfect game") 
+//   } else if (result < parGame) {
+//     console.log(final * -1 + " under par")
+//   }
+// }
+
+// var fishWinnings = overStokes.reduce(total)
+// for (i = 0; i < overStokes.length; i++) {
+//   console.log(players[i].name + " owes Fish \$" + overStokes[i])
+// }
+
 

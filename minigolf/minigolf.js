@@ -42,10 +42,15 @@ for (i = 0; i < players.length; i++) {
 
 console.log("\nFish's winnings:")
 for (i = 0; i < players.length; i++) {
-  if (players[i].name !== "Fish")
-  console.log(players[i].name + " owes Fish \$" + players[i].final)
-  owings[i] = players[i].final
-} 
+  if (players[i].name !== "Fish" && players[i].final > 0) {
+    console.log(players[i].name + " owes Fish \$" + players[i].final)
+    owings[i] = players[i].final
+  } else if (players[i].name !== "Fish" && players[i].final < 0) {
+    console.log("Fish owes " + players[i].name + " \$" + players[i].final * -1)
+  } else if (players[i].name !== "Fish" && players[i].final === 0) {
+    console.log(players[i].name + " doesn't owes Fish this time...")
+  }
+}
 console.log("Together they owe Fish \$" + owings.reduce(total))
 
 

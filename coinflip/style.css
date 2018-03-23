@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  border: 5px solid linen;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  border: 20px solid plum;
+  border-radius: 250px;
+  width: 60%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}

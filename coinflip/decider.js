@@ -2,11 +2,10 @@ console.log('time to flip')
 
 
 var coinImg = document.getElementById('coin-img');
-var headsTally = document.querySelector('.heads-tally')
-var tailsTally = document.querySelector('.tails-tally')
-var coinFlipBtn = document.querySelector('.coin-flip-btn')
-
-
+var headsTally = document.querySelector('.heads-tally');
+var tailsTally = document.querySelector('.tails-tally');
+var coinFlipBtn = document.querySelector('.coin-flip-btn');
+var coinSection = document.querySelector('section');
 
 var coinFlip = function() {
   var headsOrTails = Math.floor(Math.random() * 10);
@@ -17,24 +16,34 @@ var coinFlip = function() {
   }
 }
 
+var imgFlip = function(side) {
+  coinImg.src = side + '.png'
+}
+
+var changeColor = function(color) {
+  coinSection.style.borderColor = color;
+} 
 
 var totalHeads = 0;
 var totalTails = 0;
 
-while (totalTails < 5 && totalHeads < 5) {
+var tossIt = function() {
   var toss = coinFlip();
   if (toss === true) {
     ++totalHeads;
+    headsTally.textContent = Number(headsTally.textContent) + 1;
+    imgFlip('heads');
+    changeColor('mistyrose')
   } else if (toss === false) {
     ++totalTails;
+    tailsTally.textContent = Number(tailsTally.textContent) + 1;
+    imgFlip('tails')
+    changeColor('rebeccapurple');
+
   }
 }
 
-if (totalHeads === 5) {
-  console.log('HEADS IS THE WINNER!');
-  headsTally.textContent = headsTally.textContent + 1;
-} else if (totalTails === 5) {
-  console.log('TAILS IS THE WINNER!');
-  tailsTally.textContent = tailsTally.textContent + 1;
-}
+coinFlipBtn.addEventListener('click', tossIt);
+
+
 

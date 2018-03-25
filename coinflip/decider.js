@@ -6,44 +6,55 @@ var headsTally = document.querySelector('.heads-tally');
 var tailsTally = document.querySelector('.tails-tally');
 var coinFlipBtn = document.querySelector('.coin-flip-btn');
 var coinSection = document.querySelector('section');
+var heading = document.querySelector('h1');
+var messageHeading = document.querySelector('h3');
+// var fiveFlipBtn = document.querySelector('.five-flip-btn');
+
+headsTally.textContent = 0;
+tailsTally.textContent = 0;
 
 var coinFlip = function() {
-  var headsOrTails = Math.floor(Math.random() * 10);
-  if (headsOrTails >= 5) {
-    return true;
-  } else if (headsOrTails <= 4) {
-    return false;
-  }
+  return Math.round(Math.random());
 }
 
 var imgFlip = function(side) {
-  coinImg.src = side + '.png'
+  coinImg.src = side + '.png';
 }
 
 var changeColor = function(color) {
   coinSection.style.borderColor = color;
 } 
 
-var totalHeads = 0;
-var totalTails = 0;
+var plusOne = function(tally) {
+  tally.textContent = Number(tally.textContent) + 1;
+}
+
+
 
 var tossIt = function() {
   var toss = coinFlip();
-  if (toss === true) {
-    ++totalHeads;
-    headsTally.textContent = Number(headsTally.textContent) + 1;
+  if (toss === 1) {
+    plusOne(headsTally);
     imgFlip('heads');
-    changeColor('mistyrose')
-  } else if (toss === false) {
-    ++totalTails;
-    tailsTally.textContent = Number(tailsTally.textContent) + 1;
+    changeColor('#F2463E')
+    if (Number(headsTally.textContent) >= 5) { 
+      messageHeading.textContent = 'heads wins!'
+    }
+  } else if (toss === 0) {
+    plusOne(tailsTally)
     imgFlip('tails')
-    changeColor('rebeccapurple');
-
+    changeColor('#3E9EF2');
+    if (Number(tailsTally.textContent) >= 5) { 
+      messageHeading.textContent = 'tails wins!'
+    }
   }
+
 }
+ 
+
 
 coinFlipBtn.addEventListener('click', tossIt);
+
 
 
 

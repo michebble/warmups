@@ -1,25 +1,42 @@
 * {
   box-sizing: border-box;
   text-align: center;
+  font-family: 'Overpass Mono', monospace;
+}
+
+body {
+  background-color: #C78778;
+}
+
+h1 {
+  padding: 5px 0 0 0;
+  font-size: 2.5em;
 }
 
 main {
-  border: 5px solid linen;
+  border: 5px solid #434F59;
   border-radius: 15px;
   width: 60%;
   margin: auto;
-  
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  background-color: #44BFB7;
 }
 
 section {
-  border: 20px solid plum;
-  border-radius: 250px;
+  border: 20px solid #F2463E;
+  border-radius: 50%;
   width: 60%;
   margin: auto;
 }
 
 img {
-  width: 100%;
+  width: 75%;
+}
+
+button {
+  padding: 10px 40px;
+  width: 60%;
+  margin: 0 auto 20px;
 }

@@ -25,16 +25,17 @@ main {
 }
 
 section {
-  border: 20px solid #F2463E;
+  border: 5px solid #F2463E;
   border-radius: 50%;
-  width: 60%;
-  margin: auto;
+  min-width: 230px;
+  min-height: 230px;
+  margin: 5px auto;
 }
 
-img {
+/*img {
   width: 75%;
 }
-
+*/
 button {
   padding: 10px 40px;
   width: 60%;

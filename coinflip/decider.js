@@ -60,9 +60,6 @@ var tossIt = function() {
     }
   }
 }
- 
-
-
 
 coinFlipBtn.addEventListener('click', tossIt);
 resetBtn.addEventListener('click', resetGame);

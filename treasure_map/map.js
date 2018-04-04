@@ -9,17 +9,19 @@ var region = function(arr,x,y, treasureSpot, regionSize,regionType) {
       arr[rowSelector].splice(columnSelector, 1, regionType);
     }
   }
-  arr = fakeTreasureSpot(arr,xCoord,yCoord,treasureSpot);
+  arr = fakeTreasureSpot(arr, x, y, xCoord, yCoord, treasureSpot);
   return arr;
 }
 
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 
-
-var fakeTreasureSpot = function(arr,x,y,treasureSpot) {
+var fakeTreasureSpot = function(arr,xmin,ymin, xmax,ymax,treasureSpot) {
   debugger
-  return arr[Math.floor(Math.random() * x)][Math.floor(Math.random() * y)] = treasureSpot;
+  return arr[Math.floor(Math.random() * getRandomArbitrary(xmin, xmax))][Math.floor(Math.random() * getRandomArbitrary(ymin,ymax))] = treasureSpot;
 
 }
 

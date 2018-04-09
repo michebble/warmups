@@ -24,6 +24,7 @@ keygenb {
 
 }
 
+//bad function TODO remove alphabets as input, change to string
 var swapLetters = function(inputAplha, outputAlpha) {
   var message = input.value.split('');
   var newMessage = [];

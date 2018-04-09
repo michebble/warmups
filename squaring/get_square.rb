@@ -1,23 +1,18 @@
 
-def get_squares(possible_squares)
-  collected_squares =  collect_squares(possible_squares)
+def get_squares(array_of_numbers)
+  collected_squares =  collect_squares(array_of_numbers)
   collected_squares.uniq!
   return collected_squares.sort!
 end
 
-def collect_squares(possible_squares)
-  squares_array = []
-  possible_squares.each do |number|
+def collect_squares(array_of_numbers)
+  true_squares = []
+  array_of_numbers.each do |number|
       if Math.sqrt(number) % 1 == 0
-        squares_array << number
+        true_squares << number
       end 
   end
-  return squares_array
+  return true_squares
 end
-
-
-
-
-# answer = Math.sqrt(first_number)
 
 puts get_squares([4, 1, 16, 1, 10, 35, 22]) # => [1, 4, 16]

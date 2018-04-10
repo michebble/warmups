@@ -1,4 +1,3 @@
-
 def get_squares(array_of_numbers)
   collected_squares =  collect_squares(array_of_numbers)
   collected_squares.uniq!

@@ -1,4 +1,3 @@
-
 var getSquares = function(array) {
   var trueSquares =[];
   array.forEach(function(number) {

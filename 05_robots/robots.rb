@@ -5,13 +5,15 @@ class Robot
     @name = robot_name
     @name_calls = 0
     @instruction_calls = 0
+    @time_created = Time.now
+    @time_booted = Time.now
   end
 
   def name
     if @name_calls == 2
       reset
     else
-      puts @name
+      puts "Bzzt.. MY NAME IS #{@name}." 
       @name_calls += 1
     end
     @instruction_calls += 1
@@ -22,32 +24,32 @@ class Robot
     @instruction_calls += 1
   end
 
+  def timers
+    time_now = Time.now
+    since_created = time_now - @time_created
+    since_booted = time_now -@time_booted
+    puts "Beep! #{since_booted.to_i} SECONDS SINCE LAST BOOT. Boop! #{since_created.to_i} SECONDS SINCE CREATATION."
+  end
+
   private
 
   def robot_name
     name = ""
-    2.times {name << random_upcase}
-    3.times {name << random_single_num}
+    2.times {name << rand(65..91).chr}
+    3.times {name << rand(0..9).to_s}
     return name
   end
 
-  def random_upcase
-    (65 + rand(25)).chr
-  end
-
-  def random_single_num
-    rand(0..9).to_s
-  end
-
   def reset
-    puts "Resetting to factory settings."
+    puts "..RE-INITIALIZING FACTORY SETTINGS.."
     @name = robot_name
     @name_calls = 0
     @instruction_calls += 1
+    @time_booted = Time.now
   end
 
 end
 
 binding.pry
 
-puts 'byebye' 
+puts 'bye' 

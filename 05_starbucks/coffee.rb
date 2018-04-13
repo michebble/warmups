@@ -15,7 +15,7 @@ class Coffee
 
   def to_s
 
-      puts "#{@name}'s #{@type}, #{@size}, #{@sugars}."
+      "#{@name}'s #{@type}, #{@size}, #{@sugars}"
   end
 
   def bad_spelling(name)
@@ -27,10 +27,10 @@ class Coffee
     current_time = Time.new
     time_dif = current_time - @prep_start
     if time_dif >= @prep_time && !collected
-      puts "#{@name}'s #{@type}, #{@size}, #{@sugars}. is ready!"
+      puts "#{to_s}, is ready!"
       @collected = true
     elsif !collected
-      puts "Still working on #{@name}'s #{@type}, #{@size}, #{@sugars}."
+      puts "Still working on #{to_s}."
     end
   end
 

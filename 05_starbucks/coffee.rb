@@ -7,13 +7,14 @@ class Coffee
     @type = type
     @sugars = sugars 
     @size = size
-    @prep_time = rand(120..300)
+    @prep_time = rand(12..30)
     @prep_start = Time.new
     @collected = false
   end
 
 
   def to_s
+
       puts "#{@name}'s #{@type}, #{@size}, #{@sugars}."
   end
 
@@ -25,10 +26,10 @@ class Coffee
   def ready?
     current_time = Time.new
     time_dif = current_time - @prep_start
-    if time_dif >= @prep_time
+    if time_dif >= @prep_time && !collected
       puts "#{@name}'s #{@type}, #{@size}, #{@sugars}. is ready!"
       @collected = true
-    else
+    elsif !collected
       puts "Still working on #{@name}'s #{@type}, #{@size}, #{@sugars}."
     end
   end

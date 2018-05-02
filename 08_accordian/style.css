@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #202231;
+}
+
+select {
+  width: 300px;
+  background: #FFF;
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  
+  color: #55514d;
+}

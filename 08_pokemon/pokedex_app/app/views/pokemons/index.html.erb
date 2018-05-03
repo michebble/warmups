@@ -1,0 +1,15 @@
+<a href="/pokemons/new">enter new pokemon</a>
+<div class="poke-dex">
+  <div class="poke-entry">
+    <div class="poke-species" >Species</div>
+    <div class="poke-name" >Nickname</div>
+    <div class="poke-level" >Level</div>
+  </div>
+  <% @pokemons.each do |pokemon|%>
+    <div class="poke-entry">
+      <div class="poke-species" ><%= pokemon.species %></div>
+      <div class="poke-name" ><%= pokemon.nickname %></div>
+      <div class="poke-level" ><%= pokemon.level %></div>
+    </div>
+  <% end %>
+</div>

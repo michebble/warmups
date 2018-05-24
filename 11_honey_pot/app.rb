@@ -1,6 +1,6 @@
 
-def check_honey_pots
-  honey_pots = Array.new(100, false)
+def check_honey_pots(number)
+  honey_pots = Array.new(number, false)
 
   1.upto(honey_pots.length) do |factor|
     honey_pots.each_index do |index|
@@ -13,4 +13,4 @@ def check_honey_pots
     .map{|index| index + 1}
 end
 
-p check_honey_pots
+p check_honey_pots(100)
